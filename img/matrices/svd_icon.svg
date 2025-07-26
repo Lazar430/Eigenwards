@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg baseProfile="full" height="60px"
+     width="125px" xmlns="http://www.w3.org/2000/svg">
+  
+<rect fill="#64d8cb" height="50" rx="3" width="6" x="5" y="5" />
+
+<rect fill="#64d8cb" height="50" rx="3" width="6" x="15" y="5" />
+
+<rect fill="#64d8cb" height="50" rx="3" width="6" x="25" y="5" />
+
+
+
+<rect fill="#64d8cb" height="10" rx="3" width="10" x="35" y="5" />
+
+<rect fill="#64d8cb" height="10" rx="3" width="10" x="47" y="17" />
+
+<rect fill="#64d8cb" height="10" rx="3" width="10" x="59" y="29" />
+
+
+
+<rect fill="#64d8cb" height="6" rx="3" width="50" x="75" y="5" />
+
+<rect fill="#64d8cb" height="6" rx="3" width="50" x="75" y="17" />
+
+<rect fill="#64d8cb" height="6" rx="3" width="50" x="75" y="29" />
+
+</svg>

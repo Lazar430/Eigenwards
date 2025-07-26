@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg baseProfile="full" height="60px"
+     width="125px" xmlns="http://www.w3.org/2000/svg">
+
+<rect fill= "#64d8cb" height="50" rx="3" width="6" x="5" y="5" />
+
+<rect fill= "#64d8cb" height="50" rx="3" width="6" x="15" y="5" />
+
+<rect fill= "#64d8cb" height="50" rx="3" width="6" x="25" y="5" />
+
+<polygon points="50,0 93,25 93,75 50,100 7,75 7,25" fill="#64d8cb" />
+
+</svg>
