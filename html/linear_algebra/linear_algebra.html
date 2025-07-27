@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <base href="../../">
+
+    <title>Linear Algebra</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/equations/logo.png">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;600&display=swap" rel="stylesheet">
+
+
+    <link rel = "stylesheet" type = "text/css" href = "css/style.css">
+    
+  </head>
+
+  <body>
+    <canvas id = "julia"></canvas>
+
+    
+    <script src="js/background/webgl.js"></script>
+    <script src="js/background/julia_shaders.js"></script>
+    <script src="js/background/julia_context.js"></script>
+    <script src="js/background/julia.js"></script>
+
+    <a href = "index.html"><h1 class="site-title">Eigenwards</h1></a>
+
+    <div class = "container"><div class = "grid_nx2" id = "linear-grid-container">
+	
+    </div></div>
+
+    <script src = "js/ui/box/linear_algebra/linear_boxes.js"></script>
+    
+
+    <div class="sidebar">
+	<div class="menu-wrapper" id="main-menu-wrapper">
+	  <div class="menu-button"><h1>Menu</h1></div>
+	  <div class="navbar" id="navbar-main"></div>
+	</div>
+
+	<!--<div class="menu-wrapper" id="matrix-factorizations-wrapper">
+	  <div class="menu-button"><h1>Matrix Factorizations</h1></div>
+	  <div class="navbar" id="navbar-factorizations"></div>
+	</div>-->
+    </div>
+
+    <script src = "js/ui/nav/populate_navbar.js"></script>
+    <script src = "js/ui/nav/navbar.js"></script>
+    <!--<script src = "js/ui/nav/factorizations_navbar.js"></script>-->
+
+    
+    <!--<div class = "container"><div class = "grid_nx3" id = "grid-container"></div></div>
+
+	
+	<script src = "js/ui/box/linear_algebra/factorization_boxes.js"></script>-->
+	
+  </body>
+</html>

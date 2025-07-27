@@ -1,0 +1,61 @@
+.site-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 80px;
+    text-align: center;
+    color: transparent;
+
+    background: linear-gradient(90deg, #64d8cb, #ff6ec4, #64d8cb);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    animation: shine 5s linear infinite;
+
+    letter-spacing: 2px;
+    margin: 40px 0;
+
+    text-shadow: 0 0 50px #64d8cb66, 0 0 50px #64d8cb44;
+    transition: transform 0.3s ease;
+
+    line-height: 1.1;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.site-title:hover {
+    transform: scale(1.05);
+}
+
+@keyframes shine {
+    to {
+        background-position: -200% center;
+    }
+}
+
+
+.site-quote {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    padding: 20px 40px;
+
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #aaaaee;
+
+    border-left: 4px solid #666699;
+    border-bottom: 4px solid #666699;
+    background: rgba(44, 44, 62, 0.6);
+    border-radius: 10px;
+}
+
+.quote-text {
+    margin-bottom: 10px;
+}
+
+.quote-author {
+    text-align: right;
+    font-style: normal;
+    font-size: 16px;
+    color: #8888cc;
+}

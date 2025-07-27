@@ -1,0 +1,140 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px; 
+    
+    position: absolute;
+    top: 180px;
+    left: calc((100% - 80%) / 2 - 150px);
+}
+
+
+.menu-wrapper {
+    position: relative;
+    left: calc((100% - 80%) / 2 - 40px);
+}
+
+.menu-button {
+    background-color: #3f3f5a;
+    color: #ffb86c;
+    
+    padding: 20px;
+    border-radius: 20px;
+
+    width: 300px;
+    
+    text-align: center;
+    
+    cursor: pointer;
+    
+    font-weight: bold;
+    font-size: 20px;
+    font-family: sans-serif;
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.menu-wrapper:hover .navbar {
+    display: block;
+}
+
+.menu-button:hover {
+    background-color: #505072;
+}
+
+.menu-button h1,
+.navbox h1 {
+    font-size: 30px;    
+    font-weight: bold;  
+    margin: 0;          
+    line-height: 1.2;   
+    font-family: sans-serif; 
+    text-transform: none; 
+}
+
+.navbar {
+    display: none;
+    position: relative;
+    width: 300px;
+    max-height: 600px;
+    padding: 20px;
+    margin-top: 10px;
+
+    background-color: #2c2c3e;
+    border-radius: 20px;
+    border-left: 5px #666699 solid;
+    border-bottom: 5px #666699 solid;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+    overflow-y: auto;
+}
+
+
+.navbox {
+    position: relative;
+
+    background-color: #3f3f5a;
+    color: #ffb86c;
+
+    padding: 20px;
+    margin-top: 20px;
+
+    min-height: 50px;
+
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    cursor: pointer;
+    overflow: hidden;
+
+    transition: transform 0.2s ease;
+}
+
+.subbox {
+    background-color: #3a3a50;
+
+    margin-top: 20px;
+    
+    padding: 8px 12px;
+    border-radius: 8px;
+    
+    font-size: 0.85rem;
+    font-weight: bold;
+    
+    color: white;
+    
+    border-left: 2px solid #8888cc;
+    border-bottom: 2px solid #8888cc;
+    
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    
+    white-space: nowrap;
+    cursor: pointer;
+    
+    transition: background-color 0.2s;
+}
+
+.navsection {
+    display: flex;
+    flex-direction: column;
+}
+
+.submenu {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.submenu.open {
+    max-height: 1000px; 
+    opacity: 1;
+}

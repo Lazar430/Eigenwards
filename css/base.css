@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    outline: 2px solid red;
+
+    min-height: 100vh;
+    color: #f0f0f5;
+    
+    font: 30px 'Segoe UI', sans-serif;
+    line-height: 1.6em;
+
+    max-width: 100%;
+}
+
+a {
+    color: #64d8cb;
+    text-decoration: none;
+}
+
+#julia {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    display: block;
+}

@@ -11,7 +11,7 @@ precision mediump float;
       uniform vec2 u_resolution;
       uniform vec2 u_c;
 
-      const int iterations = 20;
+      const int iterations = 100;
       float radius = 4.0;
       
       bool escape_condition(vec2 z){

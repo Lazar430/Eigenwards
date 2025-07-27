@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <base href="../../../">
+
+    <title>Linear Algebra</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/equations/logo.png">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;600&display=swap" rel="stylesheet">
+
+
+    <link rel = "stylesheet" type = "text/css" href = "css/style.css">
+    
+  </head>
+
+  <body>
+    <canvas id = "julia"></canvas>
+
+    
+    <script src="js/background/webgl.js"></script>
+    <script src="js/background/julia_shaders.js"></script>
+    <script src="js/background/julia_context.js"></script>
+    <script src="js/background/julia.js"></script>
+
+    <a href = "index.html"><h1 class="site-title">Eigenwards</h1></a>
+    
+
+    <div class="sidebar">
+	<div class="menu-wrapper" id="main-menu-wrapper">
+	  <div class="menu-button"><h1>Menu</h1></div>
+	  <div class="navbar" id="navbar-main"></div>
+	</div>
+
+	<div class="menu-wrapper" id="matrix-wrapper">
+	  <div class="menu-button"><h1>Matrices</h1></div>
+	  <div class="navbar" id="navbar-matrix"></div>
+	</div>
+
+	<div class="menu-wrapper" id="cholesky-wrapper">
+	  <div class="menu-button"><h1>Cholesky Factorization</h1></div>
+	  <div class="navbar" id="navbar-cholesky"></div>
+	</div>
+    </div>
+
+    <script src = "js/ui/nav/populate_navbar.js"></script>
+    <script src = "js/ui/nav/navbar.js"></script>
+    <script src = "js/ui/nav/matrices_navbar.js"></script>
+    <!--<script src = "js/ui/nav/factorizations_navbar.js"></script>-->
+
+    
+    <div class = "container">
+      <h1 class = "site-title">Cholesky Factorization</h1>
+    </div>
+	
+  </body>
+</html>
