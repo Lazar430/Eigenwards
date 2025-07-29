@@ -19,7 +19,7 @@ topics.forEach( ({label, icon} ) => {
     box.innerHTML = `
     <h1>${label}</h1>
     <div class="hover-layer">
-      <a href = "../html/svd.html"><img class="icon" src="${icon}" alt="${label}"></a>
+      <a href = "html/real_analysis/real_analysis.html"><img class="icon" src="${icon}" alt="${label}"></a>
     </div>
   `;
     

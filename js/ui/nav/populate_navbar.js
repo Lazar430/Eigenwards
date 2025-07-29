@@ -19,22 +19,26 @@ function populateNavbar(containerId, data) {
         });
 
         section.subtopics.forEach(sub => {
-            const subBox = document.createElement("div");
-            subBox.className = "subbox";
-
             // Support both string and object for subtopics
-            if (typeof sub === "string") {
-                subBox.textContent = sub;
-            } else {
-                const link = document.createElement("a");
-                link.href = sub.href || "#";
-                link.textContent = sub.title;
-                link.style.color = "inherit";
-                link.style.textDecoration = "none";
-                subBox.appendChild(link);
-            }
+	    if (typeof sub === "string") {
+		const subBox = document.createElement("div");
+		subBox.className = "subbox";
+		subBox.textContent = sub;
+		submenu.appendChild(subBox);
+	    } else {
+		const link = document.createElement("a");
+		link.href = sub.href || "#";
+		link.className = "subbox";
+		link.textContent = sub.title;
 
-            submenu.appendChild(subBox);
+		// Optional: retain appearance
+		link.style.display = "block";
+		link.style.color = "inherit";
+		link.style.textDecoration = "none";
+
+		submenu.appendChild(link);
+	    }
+
         });
 
         sectionDiv.appendChild(navBox);

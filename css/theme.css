@@ -1,6 +1,5 @@
-.site-title {
+.title-style {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 80px;
     text-align: center;
     color: transparent;
 
@@ -12,18 +11,29 @@
     animation: shine 5s linear infinite;
 
     letter-spacing: 2px;
-    margin: 40px 0;
-
     text-shadow: 0 0 50px #64d8cb66, 0 0 50px #64d8cb44;
     transition: transform 0.3s ease;
 
     line-height: 1.1;
-    cursor: pointer;
     overflow: visible;
 }
 
+.site-title {
+    @extend .title-style; 
+    font-size: 80px;
+    margin: 40px 0;
+
+    cursor: pointer;
+}
+
+
 .site-title:hover {
     transform: scale(1.05);
+}
+
+.page-title {
+    font-size: 50px;
+    margin: 20px 0;
 }
 
 @keyframes shine {
@@ -31,7 +41,6 @@
         background-position: -200% center;
     }
 }
-
 
 .site-quote {
     max-width: 800px;

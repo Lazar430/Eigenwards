@@ -1,7 +1,7 @@
 const topics = [
     {
         label: "Matrix Factorizations",
-        icon: "img/matrices/identity.svg",
+        icon: "img/equations/eigen_decomposition.svg",
         href: "html/linear_algebra/matrix_factorizations.html",
         description:
 	`Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
