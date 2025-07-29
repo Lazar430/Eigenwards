@@ -19,4 +19,4 @@ const mainMenuData = [
 ];
 
 
-populateNavbar("navbar-main", mainMenuData);
+populateNavbar("navbar-main-menu", mainMenuData);

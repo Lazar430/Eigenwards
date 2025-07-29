@@ -2,12 +2,22 @@
 .layout {
     display: flex;
     flex-direction: row;
+    
     align-items: flex-start;
     gap: 4rem;
+    
     max-width: 1600px;
     margin: 0 auto;
     padding: 2rem;
+    
     box-sizing: border-box;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;  
 }
 
 /* Main content area */
