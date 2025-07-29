@@ -1,12 +1,18 @@
+<!DOCTYPE html>
 <script src="../../../js/template.js"></script>
+<script src="../../../js/math.js"></script>
 
 <template id="page-content">
   <div class="container">
-    <p>Pretend this is an article talking about what is says it's talking about.</p>
-    <p>Because it really isn't.</p>
-  </div>
-  <div class="container">
-    <p>Some more explanatory text can go here too.</p>
+    <p>
+      This is inline math: \( A = LU \).
+    </p>
+
+    <p>
+      And this is display math:
+      \[ A = QR \]
+    </p>
+
   </div>
 </template>
 
@@ -20,4 +26,6 @@
 	  { id: "lu", label: "LU Factorization", script: "js/ui/nav/navbar.js" }
       ]
   });
+
+  window.addEventListener("load", renderMath);
 </script>
