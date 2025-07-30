@@ -1,19 +1,346 @@
 <!DOCTYPE html>
 <script src="../../../js/template.js"></script>
-<script src="../../../js/math.js"></script>
+<script src="../../../js/ui/text/math.js"></script>
+<script src="../../../js/ui/text/drop.js"></script>
 
 <template id="page-content">
-  <div class="container">
+  <div class = "container">
+
+    <h1 id = "BroadStroke">Broad Stroke</h1>
     <p>
-      This is inline math: \( A = LU \).
+      
+      Let's start with a <span class = "emph">square matrix</span>. A matrix \( A \in \mathbb{R}^{n \times n} \) is said to have an LU factorization if there is a
+      lower triangular matrix \( L \) and an upper triangular matrix \( U \) (of appropriate dimensions) such that we can write:
+
+      \[ A = LU. \]
+
+      Finding these two matrices essentially boils down to <span class = "emph">Gaussian Elimination</span>, except now we do it in matrix form, so feel
+      free to check out the method's main page if you need a brush up on that algorithm.
+    </p>
+    
+  </div>
+
+  <div class = "container">
+    <h1 id = "QuickExamples">Quick Examples</h1>
+    
+    <p>
+      For those impacient, let's take two easy matrices to illustrate the process. Just as a side note though, if you developed the habit of freestyling through Gauss' method,
+      i.e. you multiply a row at random by either a negative or a positive constant and or perform whichever operation you fancy, we're gonna choose
+      the following row reduction convention:
     </p>
 
+    <p id = "eq1">
+      \[
+      \begin{equation} R_i \rightarrow R_i - k \cdot R_j, \quad  j < i \end{equation}
+								     \]
+								     </p>
+
     <p>
-      And this is display math:
-      \[ A = QR \]
+      meaning we reduce the current row by subtracting a multiple of a previous row from it.
     </p>
+    
+    <p class = "toggle-button">Example 1</p>
+    <div class = "toggle-content hidden">
+      <p>
+	For starters, consider
+
+	\[
+	\begin{pmatrix}
+	4 & 2\\
+	6 & 3
+	\end{pmatrix}.
+	\]
+
+	Pretty easy-going one; we obtain its row reduced form after only one operation:
+
+	\[
+	\begin{pmatrix}
+	4 & 2\\
+	6 & 3
+	\end{pmatrix}
+	\xrightarrow{R_2 \to R_2 - \frac{3}{2} R_1}
+	\begin{pmatrix}
+	4 & 2\\
+	0 & 0
+	\end{pmatrix}.
+	\]
+
+	Now it's quite apparent that we can take \( U \) to be the matrix above. Since it's not <span class = "emph">invertbile</span>, \( L \) cannot be unique, but if we accept
+	the convention that it should be a unit lower triangular matrix, meaning that it has only 1s on its main diagonal, then we have:
+
+	\[
+	\begin{pmatrix}
+	1 & 0\\
+	l_{21} & 1
+	\end{pmatrix}
+	\begin{pmatrix}
+	4 & 2\\
+	0 & 0
+	\end{pmatrix}
+
+	=
+
+	\begin{pmatrix}
+	4 & 2\\
+	6 & 3
+	\end{pmatrix},
+	\]
+
+	so it's straightforward to see that \( l_{21} \) must be \( \frac{3}{2} \), thus obtaining
+
+	\[
+	\begin{pmatrix}
+	4 & 2\\
+	6 & 3
+	\end{pmatrix}
+
+	=
+	
+	\begin{pmatrix}
+	1 & 0\\
+	\frac{3}{2} & 1
+	\end{pmatrix}
+	\begin{pmatrix}
+	4 & 2\\
+	0 & 0
+	\end{pmatrix}.
+	
+	\]
+      </p>
+    </div>
+
+    <p class = "toggle-button">Example 2</p>
+    <div class = "toggle-content hidden">
+      <p>
+	Now for the second example, let's take a look at a bigger matrix:
+
+	\[
+	\begin{pmatrix}
+	2 & 4 & 2\\
+	4 & 9 & 6\\
+	2 & 6 & 9
+	\end{pmatrix}.
+	\]
+
+
+	We're just going to let Gauss cook for the next couple lines:
+
+	\[
+	\begin{pmatrix}
+	2 & 4 & 2\\
+	4 & 9 & 6\\
+	2 & 6 & 9
+	\end{pmatrix}
+
+	\xrightarrow[R_3 \to R_3 - R_1]{R_2 \to R_2 - 2 R_1}
+
+	\begin{pmatrix}
+	2 & 4 & 2\\
+	0 & 1 & 2\\
+	0 & 2 & 7
+	\end{pmatrix};
+	\]
+
+	\[
+	\begin{pmatrix}
+	2 & 4 & 2\\
+	0 & 1 & 2\\
+	0 & 2 & 7
+	\end{pmatrix}
+
+	\xrightarrow{R_3 \to R_3 - 2 R_2}
+
+	\begin{pmatrix}
+	2 & 4 & 2\\
+	0 & 1 & 2\\
+	0 & 0 & 3
+	\end{pmatrix}.
+	\]
+	
+	Again, the row reduced form of \( A \) is the perfect candidate for \( U \). Now \( L \) is given by:
+
+	\[
+	\begin{pmatrix}
+	2 & 4 & 2\\
+	4 & 9 & 6\\
+	2 & 6 & 9
+	\end{pmatrix}
+
+	=
+
+	\begin{pmatrix}
+	1 & 0 & 0\\
+	l_{21} & 1 & 0\\
+	l_{31} & l_{32} & 1
+	\end{pmatrix}
+
+	\begin{pmatrix}
+	2 & 4 & 2\\
+	0 & 1 & 2\\
+	0 & 0 & 3
+	\end{pmatrix}.
+	
+	\]
+
+	After not too much hassle we end up with:
+
+	\[
+	\begin{pmatrix}
+	2 & 4 & 2\\
+	4 & 9 & 6\\
+	2 & 6 & 9
+	\end{pmatrix}
+
+	=
+
+	\begin{pmatrix}
+	1 & 0 & 0\\
+	2 & 1 & 0\\
+	1 & 2 & 1
+	\end{pmatrix}
+
+	\begin{pmatrix}
+	2 & 4 & 2\\
+	0 & 1 & 2\\
+	0 & 0 & 3
+	\end{pmatrix}.
+	
+	\]
+
+	You might've noticed by now that the entries of \( L \) seem to correspond to the constants we multiply rows by. We'll see were this hunch takes us
+	in the following sections.
+
+      </p>
+    </div>
 
   </div>
+
+  <div class = "container">
+    <h1 id = "ADeeperLook">A Deeper Look</h1>
+
+    <p>
+      We can establish some rules for finding the entries for \( L \) and \( U \). Particularly for the 3x3 case, assuming we obtained \( U \) by performing
+      Gaussian elimination on \( A \), like we did in the examples given earlier, we can confidently say that:
+
+    </p>
+
+    <p id = "eq2">
+	\[
+	\begin{align}
+	u_{1j} &= a_{1j} \\
+	u_{2j} &= a_{2j} - k_1 u_{1j} \\
+	u_{3j} &= a_{3j} - k_2 u_{1j} - k_3 u_{2j}
+	\end{align}
+	\]
+    </p>
+    
+    <p>
+      where the \( k \)s are the constants such as the one in equation (<a href = "html/linear_algebra/factorizations/lu.html#eq1">1</a>).
+      This simply means that the first row of \( U \) is identical to the first row of \( A \) and the
+      two other rows are the results of row reduction, where the \( j \)th row of \( U \) is the \( j \)th row of A reduced by multiples of all the previous rows of
+      \( U \).
+    </p>
+
+    <br>
+
+	<p>
+	  Looking carefully at the equations
+	  (<a href = "html/linear_algebra/factorizations/lu.html#eq2">2</a>) - (<a href = "html/linear_algebra/factorizations/lu.html#eq2">4</a>),
+	  we notice that the \( k \)s are constant, while we're
+	  free to choose the \( u \)s and \( a \)s. Since \( U \) is upper triangular, \( u_{21} \) is \( 0 \), so by choosing \( j = 1 \) in equation
+	  (<a href = "html/linear_algebra/factorizations/lu.html#eq2">3</a>):
+	</p>
+
+	<p id = "eq5">
+	  \[
+	  \begin{equation}
+	  0 = a_{21} - k_1u_{11} \Rightarrow k_1 = \frac{a_{21}}{a_{11}},
+	  \end{equation}
+	  \]
+
+	  since \( u_{11} = a_{11} \).  
+	</p>
+
+	<p>
+	  Similarly, \( u_{31} \) is also \( 0 \), as is \( u_{21} \), so by choosing \( j = 1 \) in equation
+	  (<a href = "html/linear_algebra/factorizations/lu.html#eq2">4</a>):
+
+	</p>
+
+	<p id = "eq6">
+	  \[
+	  \begin{equation}
+	  0 = a_{31} - k_2a_{11} \Rightarrow k_2 = \frac{a_{31}}{a_{11}}.
+	  \end{equation}
+	  \]
+	</p>
+
+    <p>
+      Finally, $u_{32} = 0$, meaning if we choose $j = 2$ in equation
+      	  (<a href = "html/linear_algebra/factorizations/lu.html#eq2">4</a>):
+    </p>
+
+    <p id = "eq7">
+      \[
+      \begin{equation}
+      0 = a_{32} - k_2a_{12} - k_3u_{22} \Rightarrow k_3 = \frac{a_{32} - k_2a_{12}}{u_{22}}.
+      \end{equation}
+      \]
+    </p>
+
+    <p>
+      Why did we bother finding concrete formulas for the $k$s? After all, they're fairly easy to compute intuitively. Well, if we try to find the
+      entries of $L$ just like we did in the examples:
+
+      \[
+      \begin{pmatrix}
+	a_{11} & a_{12} & a_{13}\\
+	a_{21} & a_{22} & a_{23}\\
+	a_{31} & a_{32} & a_{33}
+      \end{pmatrix}
+
+      =
+
+      \begin{pmatrix}
+	1 & 0 & 0\\
+	l_{21} & 1 & 0\\
+	l_{31} & l_{32} & 1
+      \end{pmatrix}
+      
+      \begin{pmatrix}
+	u_{11} & u_{12} & u_{13}\\
+	0 & u_{22} & u_{23}\\
+	0 & 0 & u_{33}
+      \end{pmatrix},
+      \]
+
+      we'll find out:
+    </p>
+      
+    <p id = "eq8"> \[ \begin{equation}a_{i1} = l_{i1}u_{11} \Rightarrow l_{i1} = \frac{a_{i1}}{a_{11}};\end{equation} \] </p>
+    <p id = "eq9"> \[ \begin{equation}a_{32} = l_{31}u_{12} + l_{32}u_{22} \Rightarrow l_{32} = \frac{a_{32} - l_{31}a_{12}}{u_{22}}.\end{equation} \] </p>
+
+    <p>
+      Equation (<a href = "html/linear_algebra/factorizations/lu.html#eq8">8</a>) holds because the first column of $A$ is given by the product between
+      $L$ and the first column of $U$, which in turn only selects the first column of $L$ and scales it by $u_{11}$. Comparing this to
+      equation (<a href = "html/linear_algebra/factorizations/lu.html#eq6">6</a>) reveals that $l_{21} = k_1$ and $l_{31} = k_2$.
+    </p>
+
+    <br>
+    
+    <p>
+      Equation (<a href = "html/linear_algebra/factorizations/lu.html#eq9">9</a>) holds because the second column of $A$ is given by the product between
+      $L$ and the second column of $U$, which in turn only selects the first two columns of $L$ and scales them by $u_{12}$ and $u_{22}$ respectively, then
+      adding them together.
+      Comparing this to equation (<a href = "html/linear_algebra/factorizations/lu.html#eq7">7</a>) make it clear that $l_{32} = k_3$.
+    </p>
+
+    <br>
+
+    <p> The main takeaway here is that the entries below the main diagonal of $L$ are given by the constants we scale the rows by during row reduction. </p>
+	
+  </div>
+  
 </template>
 
 <script>
@@ -23,7 +350,7 @@
       sidebars: [
 	  { id: "main-menu", label: "Menu", script: "js/ui/nav/navbar.js" },
 	  { id: "matrix", label: "Matrices", script: "js/ui/nav/matrices_navbar.js" },
-	  { id: "lu", label: "LU Factorization", script: "js/ui/nav/navbar.js" }
+	  { id: "lu", label: "LU Factorization", script: "js/ui/nav/factorizations/lu_navbar.js" }
       ]
   });
 

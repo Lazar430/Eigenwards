@@ -1,0 +1,26 @@
+.emph {
+    color: #d23c3c;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.toggle-button {
+    cursor: pointer;
+    font-weight: bold;
+    color: #4444aa;
+    margin-bottom: 0.25rem;
+}
+
+.toggle-button:hover {
+    text-decoration: underline;
+}
+
+.toggle-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.toggle-content.expanded {
+    max-height: 10000px; 
+}

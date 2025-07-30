@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <script src="../../../js/template.js"></script>
+<script src="../../../js/ui/text/math.js"></script>
+<script src="../../../js/ui/text/drop.js"></script>
 
 <template id="page-content">
   <div class="container">
-    <p>Pretend this is an article talking about what is says it's talking about.</p>
-    <p>Because it really isn't.</p>
-  </div>
-  <div class="container">
-    <p>Some more explanatory text can go here too.</p>
-  </div>
+    <div class="theorem-block">
+      <p><strong>Theorem:</strong> All eigenvalues of a real symmetric matrix are real.</p>
+
+      <p class="toggle-button">Proof</p>
+      <div class="toggle-content hidden">
+	<p>
+	  Let \( A \) be a real symmetric matrix... therefore \( \lambda \in \mathbb{R} \).
+	</p>
+
+	<p>
+	  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sem turpis, pulvinar eu dictum at, sagittis ac dui. Maecenas rutrum porta magna eu rutrum. Suspendisse non enim facilisis, efficitur est sed, consectetur est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris quis tincidunt sapien. Cras lobortis, lacus at hendrerit mattis, tortor est aliquet elit, a eleifend quam est id turpis. Duis id suscipit ex. Suspendisse tortor ligula, molestie non diam at, convallis vestibulum sem. Duis pharetra orci vehicula efficitur vestibulum. Nullam dui elit, suscipit sed mollis in, sagittis a augue. Nulla et felis eget nisl interdum aliquet ut sed velit. Cras maximus pharetra massa, quis ullamcorper mi. Donec eu sapien est. 
+	</p>
+      </div>
+
+
+
+      <p><strong>Corollary:</strong> Every real symmetric matrix is diagonalizable.</p>
+
+      <p class="toggle-button">Proof</p>
+      <div class="toggle-content hidden">
+	<p>Since all eigenvalues are real and the eigenspaces span \( \mathbb{R}^n \)...</p>
+      </div>
+    </div>
+
+    <div class="theorem-block">
+      <p><strong>Theorem:</strong> Every matrix has a reduced row echelon form.</p>
+
+      <p class="toggle-button">Click to show explanation</p>
+      <div class="toggle-content">
+	<p>This follows from Gauss-Jordan elimination...</p>
+      </div>
+
+    </div>
+
 </template>
 
 <script>
@@ -21,4 +51,6 @@
 	  { id: "lu", label: "QR Factorization", script: "js/ui/nav/navbar.js" }
       ]
   });
+
+  window.addEventListener("load", renderMath);
 </script>

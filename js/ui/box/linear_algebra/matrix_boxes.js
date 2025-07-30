@@ -18,7 +18,7 @@ topics.forEach(({ label, icon, href, description }) => {
     box.className = "box";
 
     box.innerHTML = `
-        <h1>${label}</h1>
+        <h2>${label}</h2>
         <div class="hover-layer">
             <a href="${href}"><img class="icon" src="${icon}" alt="${label}"></a>
         </div>

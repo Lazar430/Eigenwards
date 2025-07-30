@@ -33,6 +33,18 @@
     box-sizing: border-box;
 }
 
+.container h1{
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    font-size: 35px;
+    color: #64d8cb;
+
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.3em;
+    margin-bottom: 1em;   
+}
+
 .container p {
     font-family: 'Fira Sans', sans-serif;
     font-size: 24px;

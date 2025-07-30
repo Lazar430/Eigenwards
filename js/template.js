@@ -52,7 +52,7 @@ function renderPage({ title, baseHref = "./", sidebars = [] }) {
 
     <div class="stack">
       <div class="container">
-        <h1 class="title-style page-title">${title}</h1>
+        <div class="title-style page-title">${title}</div>
       </div>
       ${bodyContent}
     </div>
